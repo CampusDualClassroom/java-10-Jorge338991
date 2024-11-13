@@ -22,7 +22,7 @@ public class Exercise10 {
     public static String getBall() {
 
         int bolaAzul = 0;
-        String colorBola = "";
+        String colorBola;
 
         do {
 
