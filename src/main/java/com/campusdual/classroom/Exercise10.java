@@ -4,15 +4,15 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Exercise10 {
 
-    //TODO ↓
+
     // Imprimir el color de las pelotas que salgan, hasta que salgan 2 de color azul
     // El mensaje a imprimir es → La bola es de color: COLOR_BOLA
     // COLOR_BOLA puede ser → rojo, azul, verde
     public static void main(String[] args) {
-
+        getBall();
     }
 
-    //TODO ↓
+
     // Un método que devuelva una cadena de texto con el color de una pelota (en minúscula). Dicho color se escogerá de
     // manera aleatoria. Se empleará el método randomWithRange(int min, int max) para escoger un número aleatorio, que
     // lo asociaremos al valor de un color de la siguiente manera:
@@ -20,7 +20,31 @@ public class Exercise10 {
     // 2 → azul
     // 3 → verde
     public static String getBall() {
-        return null;
+
+        int bolaAzul = 0;
+        String colorBola;
+
+        do {
+
+            switch (randomWithRange(1, 4)) {
+                case 1:
+                    colorBola = "rojo";
+                    break;
+
+                case 2:
+                    colorBola = "azul";
+                    bolaAzul++;
+                    break;
+
+                default:
+                    colorBola = "verde";
+                    break;
+            }
+
+            System.out.println("La bola es de color: "+colorBola);
+
+        }while(bolaAzul<2);
+        return colorBola;
     }
 
     public static int randomWithRange(int min, int max) {
